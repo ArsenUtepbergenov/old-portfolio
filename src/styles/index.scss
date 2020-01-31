@@ -1,1 +1,35 @@
-@import 'normalize.css'
+@import 'normalize';
+
+body * {
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: 'Lato', sans-serif;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: auto;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    pointer-events: none;
+    background: url(../images/bg.jpg) no-repeat center;
+    background-size: cover;
+    z-index: -1;
+    filter: saturate(0.8);
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 500px);
+  min-height: 100vh;
+  grid-column: 2/3;
+}
+
+@import 'navbar';
+@import 'about';
+@import 'skills';

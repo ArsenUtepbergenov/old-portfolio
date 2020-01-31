@@ -4,11 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
   <title>Portfolio</title>
 </head>
-<body>
-  <div>
-    <a href="./projects/vue-ts-simple-games/index.html" target="_blank">Games</a>
-  </div>
+<body class="page">
+  <nav class="navbar">
+    <a href="#" class="navbar__link navbar__link--active">
+      <i class="fas fa-home fa-lg"></i>
+      <p class="navbar__link-name">Home</p>
+    </a>
+    <a href="#skills" class="navbar__link">
+      <i class="fas fa-brain fa-lg"></i>
+      <p class="navbar__link-name">Skills</p>
+    </a>
+    <a href="#projects" class="navbar__link">
+      <i class="fab fa-github fa-lg"></i>
+      <p class="navbar__link-name">Projects</p>
+    </a>
+    <a href="#contact" class="navbar__link">
+      <i class="far fa-envelope fa-lg"></i>
+      <p class="navbar__link-name">Contact</p>
+    </a>
+  </nav>
+  <main class="main">
+    <section id="about" class="about">
+      <div class="about__content">
+        <div class="avatar"></div>
+        <div class="articles-wrapper">
+          <article class="article">Hello, I am Arsen</article>
+          <article class="article">I specialize in front-end development and I will convert your brilliant design into quality and bulletproof HTML/CSS/Javascript!</article>
+          <article class="article">I am very passion Vue.js developer and I have been working with this framework for a year. It is very interesting for me to learn new things regarding Vue and then implement all those features in SPA applications.</article>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="skills">skills</section>
+    <section id="projects" class="projects">
+      <a href="./projects/vue-ts-simple-games/index.html" target="_blank">Games</a>
+    </section>
+    <section id="contact" class="contact">contact</section>
+  </main>
+  <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
 </body>
 </html>

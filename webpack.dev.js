@@ -41,13 +41,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: './index.html',
-      inject: 'body',
-      chunks: ['index']
+      inject: 'body'
     }),
     new HtmlWebpackPlugin({
       filename: './projects/vue-ts-simple-games/index.html',
       template: './projects/vue-ts-simple-games/index.html',
-      chunks: ['index']
+      chunks: ['games']
     })
   ],
   devServer: {

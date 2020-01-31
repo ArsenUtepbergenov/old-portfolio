@@ -1,0 +1,50 @@
+.about {
+  font-family: 'Noto Sans JP', sans-serif;
+  display: flex;
+
+  &__content {
+    margin: auto;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    min-height: 400px;
+    padding: 60px;
+    
+    .avatar {
+      background: url(../images/avatar.jpg) no-repeat;
+      background-size: cover;
+      width: 250px;
+      height: 250px;
+      border-radius: 100%;
+      margin: 16px auto;
+    }
+
+    .articles-wrapper {
+      flex-basis: 75%;
+      justify-content: stretch;
+      align-items: center;
+      flex-direction: column;
+      margin: auto;
+      border: 3px solid #8BC34A;
+      border-radius: 75px;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        left: -42px;
+        top: calc(50% - 10px);
+        border: 20px solid transparent;
+        border-right: 22px solid #8BC34A;
+      }
+    }
+
+    .article {
+      text-align: center;
+      color: white;
+      margin: 15px;
+      font-size: 1.6em;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.navbar {
+  background: #1d1d1d;
+  width: 110px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.4em;
+    padding: 12px;
+    transition: background 0.2s ease;
+    &:hover {
+      background: #4caf50;
+    }
+    &--active {
+      background: #3f51b5;
+    }
+  }
+
+  &__link-name {
+    margin: 8px auto;
+  }
+}
