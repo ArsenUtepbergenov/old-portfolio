@@ -57,6 +57,8 @@ module.exports = {
     open: true,
     hot: true,
     compress: true,
-    overlay: true
+    overlay: true,
+    progress: true,
+    inline: true
   }
 }

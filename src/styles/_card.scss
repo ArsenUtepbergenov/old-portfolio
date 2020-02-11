@@ -1,68 +1,33 @@
 .card {
-  width: 210px;
-  height: 210px;
-  border: 1px solid white;
-  border-radius: 10px;
-  background: black;
-  color: white;
-  font-size: 1.4em;
-  margin: 10px auto;
-  text-decoration: none;
-  
+  @include size(200px);
+  @include link();
+  @include transition(box-shadow);
+  background: var(--color-dark-purple);
+  margin: 10px;
+  font-size: 1.8em;
+  border-radius: 3px;
   &__content {
-    width: 150px;
-    height: 150px;
-    margin: 5px auto;
+    @include fullSize();
+    @include flex($direction: column);
+    padding: 14px;
   }
-  
   &__img {
-    width: 100%;
-    height: 100%;
+    @include fullSize();
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
+  &:hover { box-shadow: 0 0 14px 4px black; }
 
-  &__text {
-    margin: 5px auto;
-    text-align: center;
-  }
-  
-  &:hover {
-    box-shadow: 0 0 10px 0 white;
-  }
-
-  &--vuejs {
-    background-image: url(../images/vuejs.png);
-  }
-  &--vuexjs {
-    background-image: url(../images/vuex.png);
-  }
-  &--js {
-    background-image: url(../images/js.png);
-  }
-  &--webpack {
-    background-image: url(../images/webpack.png);
-  }
-  &--sass {
-    background-image: url(../images/sass.png);
-  }
-  &--html {
-    background-image: url(../images/html.png);
-  }
-  &--git {
-    background-image: url(../images/git.png);
-  }
-  &--css {
-    background-image: url(../images/css.png);
-  }
-  &--jira {
-    background-image: url(../images/jira.png);
-  }
-  &--photoshop {
-    background-image: url(../images/photoshop.png);
-  }
-  &--gulp {
-    background-image: url(../images/gulp.png);
-  }
+  &--vuejs { background-image: url(../images/vuejs.png); }
+  &--vuexjs { background-image: url(../images/vuex.png); }
+  &--js { background-image: url(../images/js.png); }
+  &--webpack { background-image: url(../images/webpack.png); }
+  &--sass { background-image: url(../images/sass.png); }
+  &--html { background-image: url(../images/html.png); }
+  &--git { background-image: url(../images/git.png); }
+  &--css { background-image: url(../images/css.png); }
+  &--jira { background-image: url(../images/jira.png); }
+  &--photoshop { background-image: url(../images/photoshop.png); }
+  &--gulp { background-image: url(../images/gulp.png); }
 }

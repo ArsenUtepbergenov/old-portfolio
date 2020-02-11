@@ -4,112 +4,136 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <title>Portfolio</title>
 </head>
 <body class="page">
   <nav class="navbar">
-    <a href="#" class="navbar__link navbar__link--active">
-      <i class="fas fa-home fa-lg"></i>
-      <p class="navbar__link-name">Home</p>
-    </a>
-    <a href="#skills" class="navbar__link">
-      <i class="fas fa-brain fa-lg"></i>
-      <p class="navbar__link-name">Skills</p>
-    </a>
-    <a href="#projects" class="navbar__link">
-      <i class="fab fa-github fa-lg"></i>
-      <p class="navbar__link-name">Projects</p>
-    </a>
-    <a href="#contact" class="navbar__link">
-      <i class="far fa-envelope fa-lg"></i>
-      <p class="navbar__link-name">Contact</p>
-    </a>
+    <div class="navbar__links">
+      <a href="#" class="navbar__link navbar__link--active">
+        <i class="fas fa-user-circle fa-lg"></i>
+        <span>About</span>
+      </a>
+      <a href="#skills" class="navbar__link">
+        <i class="fas fa-brain fa-lg"></i>
+        <span>Skills</span>
+      </a>
+      <a href="#projects" class="navbar__link">
+        <i class="fas fa-laptop-code fa-lg"></i>
+        <span>Projects</span>
+      </a>
+    </div>
+    <div class="navbar__social-icons">
+      <a class="navbar__social-icon" href="https://github.com/ArsenUtepbergenov" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a class="navbar__social-icon" href="mailto:arsen.utepbergenov@yandex.ru" target="_blank">
+        <i class="far fa-envelope"></i>
+      </a>
+      <a class="navbar__social-icon" href="skype:arsenxx3?chat" target="_blank">
+        <i class="fab fa-skype"></i>
+      </a>
+      <a class="navbar__social-icon" href="https://vk.com/arseniibredihin" target="_blank">
+        <i class="fab fa-vk"></i>
+      </a>
+    </div>
   </nav>
   <main class="main">
-    <section id="about" class="about">
+    <section class="section about">
+      <div id="about" class="section__title">
+        About me
+        <hr class="section__hr">
+      </div>
       <div class="about__content">
         <div class="avatar"></div>
         <div class="articles-wrapper">
-          <article class="article">Hello, I am Arsen</article>
-          <article class="article">I specialize in front-end development and I will convert your brilliant design into quality and bulletproof HTML/CSS/Javascript!</article>
+          <article class="article">Hi, I am glad to see you on my the portfolio website, my name is Arsen</article>
+          <article class="article">I specialize in frontend development and I will convert your brilliant design into quality and bulletproof HTML/CSS/Javascript!</article>
           <article class="article">I am very passion Vue.js developer and I have been working with this framework for a year. It is very interesting for me to learn new things regarding Vue and then implement all those features in SPA applications.</article>
         </div>
       </div>
     </section>
-    <section id="skills" class="skills">
-      <a class="card" href="https://vuejs.org/" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--vuejs"></div>
-        </div>
-        <p class="card__text">Vue.js</p>
-      </a>
-      <a class="card" href="https://vuex.vuejs.org/" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--vuexjs"></div>
-        </div>
-        <p class="card__text">Vuex</p>
-      </a>
-      <a class="card" href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--js"></div>
-        </div>
-        <p class="card__text">Js</p>
-      </a>
-      <a class="card" href="https://webpack.js.org/" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--webpack"></div>
-        </div>
-        <p class="card__text">Webpack</p>
-      </a>
-      <a class="card" href="https://sass-lang.com/" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--sass"></div>
-        </div>
-        <p class="card__text">Sass</p>
-      </a>
-      <a class="card" href="https://developer.mozilla.org/ru/docs/Web/html" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--html"></div>
-        </div>
-        <p class="card__text">Html</p>
-      </a>
-      <a class="card" href="https://git-scm.com/" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--git"></div>
-        </div>
-        <p class="card__text">Git</p>
-      </a>
-      <a class="card" href="https://developer.mozilla.org/ru/docs/Web/css" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--css"></div>
-        </div>
-        <p class="card__text">Css</p>
-      </a>
-      <a class="card" href="https://gulpjs.com/" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--gulp"></div>
-        </div>
-        <p class="card__text">Gulp</p>
-      </a>
-      <a class="card" href="https://www.atlassian.com/" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--jira"></div>
-        </div>
-        <p class="card__text">Jira</p>
-      </a>
-      <a class="card" href="https://www.adobe.com/products/photoshop.html" target="_blank">
-        <div class="card__content">
-          <div class="card__img card--photoshop"></div>
-        </div>
-        <p class="card__text">Photoshop</p>
-      </a>
+    <section class="section skills">
+      <div id="skills" class="section__title">
+        My skills
+        <hr class="section__hr">
+      </div>
+      <div class="skills__content">
+        <a class="card" href="https://vuejs.org/" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--vuejs"></div>
+            <span>Vue</span>
+          </div>
+        </a>
+        <a class="card" href="https://vuex.vuejs.org/" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--vuexjs"></div>
+            <span>Vuex</span>
+          </div>
+        </a>
+        <a class="card" href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--js"></div>
+            <span>Js</span>
+          </div>
+        </a>
+        <a class="card" href="https://webpack.js.org/" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--webpack"></div>
+            <span>Webpack</span>
+          </div>
+        </a>
+        <a class="card" href="https://sass-lang.com/" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--sass"></div>
+            <span>Sass</span>
+          </div>
+        </a>
+        <a class="card" href="https://developer.mozilla.org/ru/docs/Web/html" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--html"></div>
+            <span>Html</span>
+          </div>
+        </a>
+        <a class="card" href="https://git-scm.com/" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--git"></div>
+            <span>Git</span>
+          </div>
+        </a>
+        <a class="card" href="https://developer.mozilla.org/ru/docs/Web/css" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--css"></div>
+            <span>Css</span>
+          </div>
+        </a>
+        <a class="card" href="https://gulpjs.com/" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--gulp"></div>
+            <span>Gulp</span>
+          </div>
+        </a>
+        <a class="card" href="https://www.atlassian.com/" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--jira"></div>
+            <span>Jira</span>
+          </div>
+        </a>
+        <a class="card" href="https://www.adobe.com/products/photoshop.html" target="_blank">
+          <div class="card__content">
+            <div class="card__img card--photoshop"></div>
+            <span>Photoshop</span>
+          </div>
+        </a>
+      </div>
     </section>
-    <section id="projects" class="projects">
+    <section class="section projects">
+      <div id="projects" class="section__title">
+        My projects
+        <hr class="section__hr">
+      </div>
       <a href="./projects/vue-ts-simple-games/index.html" target="_blank">Games</a>
     </section>
-    <section id="contact" class="contact">contact</section>
   </main>
   <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
 </body>

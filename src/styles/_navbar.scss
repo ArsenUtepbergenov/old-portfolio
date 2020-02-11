@@ -1,29 +1,37 @@
 .navbar {
-  background: #1d1d1d;
-  width: 110px;
-  min-height: 100vh;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  @include flex($direction: column, $justify: flex-start, $align: stretch);
   position: fixed;
-
+  min-height: 100vh;
+  height: 100%;
+  overflow-x: hidden;
+  background: black;
+  width: 110px;
+  &__links,
+  &__social-icons {
+    @include flex($direction: column, $justify: flex-start, $align: stretch);
+  }
   &__link {
-    color: white;
-    text-decoration: none;
-    text-align: center;
+    @include link();
+    @include transition(background);
+    @include flex($direction: column, $justify: space-evenly);
     font-size: 1.4em;
-    padding: 12px;
-    transition: background 0.2s ease;
-    &:hover {
-      background: #4caf50;
-    }
+    min-height: 96px;
+    &:hover,
     &--active {
-      background: #3f51b5;
+      background: var(--color-green);
     }
   }
-
-  &__link-name {
-    margin: 8px auto;
+  &__social-icons {
+    margin-top: 34px;
+  }
+  &__social-icon {
+    @include link();
+    @include transition(color);
+    color: var(--color-dark-green);
+    font-size: 1.8em;
+    margin: 8px;
+    &:hover {
+      color: white;
+    }
   }
 }

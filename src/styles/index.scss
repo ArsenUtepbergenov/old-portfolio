@@ -1,36 +1,85 @@
+// import the normalize
 @import 'normalize';
-
+// variables
+:root {
+  --color-dark-purple: #231d31;
+  --color-blue: #3f51b5;
+  --color-orange: #ff9800;
+  --color-green: #8BC34A;
+  --color-dark-green: #4fc08c;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+}
+$navbar-width: 110px;
+$laptop-width: 1149px;
+// base rules
 body * {
   box-sizing: border-box;
 }
-
-.page {
-  font-family: 'Lato', sans-serif;
+// mixins
+@mixin background-image($url) {
+  background: url($url) no-repeat center;
+  background-size: cover;
+}
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin flex($direction: row, $wrap: nowrap, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin back-shadow() {
+  background-color: var(--color-shadow);
+}
+@mixin link($color: white) {
+  text-decoration: none;
+  text-align: center;
+  color: $color;
+}
+@mixin fullSize() {
+  @include size(100%);
+}
+@mixin grid($columns, $rows, $gap: 0, $justify: center, $align: center) {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  grid-gap: $gap;
+  justify-items: $justify;
+  align-items: $align;
+}
+@mixin transition($prop, $delay: 0.3s, $timing: ease) {
+  transition: $prop $delay $timing;
+}
+@mixin section-padding() {
+  padding: 34px 20px;
+}
+// the common page
+.page {
+  font-family: 'Montserrat', sans-serif;
   position: relative;
   &::before {
+    @include background-image('../images/bg.jpg');
+    background-attachment: fixed;
     content: "";
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
     pointer-events: none;
-    background: url(../images/bg.jpg) no-repeat center;
-    background-size: cover;
     z-index: -1;
-    filter: saturate(0.8);
+  }
+
+  .main {
+    margin-left: $navbar-width;
+    min-height: 100vh;
   }
 }
-
-.main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 500px);
-  min-height: 100vh;
-  grid-column: 2/3;
-}
-
+// import components
+@import 'section';
 @import 'navbar';
+@import 'card';
+// import sections
 @import 'about';
 @import 'skills';
-@import 'card';
+@import 'projects';

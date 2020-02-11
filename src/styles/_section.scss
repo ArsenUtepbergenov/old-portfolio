@@ -1,0 +1,14 @@
+.section {
+  color: white;
+  background: var(--color-shadow);
+  &__title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 10px;
+  }
+  &__hr {
+    width: 320px;
+  }
+}

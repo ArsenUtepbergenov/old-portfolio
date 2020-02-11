@@ -1,50 +1,50 @@
+$quote-triangle-width: 26px;
+$quote-border-width: 6px;
+$quote-right-offset: 22px;
+$quote-left-offset: -($quote-triangle-width + $quote-border-width + $quote-right-offset);
+$quote-border-radius: 100px;
+
 .about {
-  font-family: 'Noto Sans JP', sans-serif;
-  display: flex;
-
   &__content {
-    margin: auto;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    min-height: 400px;
-    padding: 60px;
-    
+    @include flex($wrap: wrap);
+    @include section-padding();
     .avatar {
-      background: url(../images/avatar.jpg) no-repeat;
-      background-size: cover;
-      width: 250px;
-      height: 250px;
+      @include background-image('../images/avatar.jpg');
+      @include size(250px);
       border-radius: 100%;
-      margin: 16px auto;
+      @media screen and (max-width: $laptop-width) {
+        margin: 14px auto;
+      }
     }
-
     .articles-wrapper {
-      flex-basis: 75%;
-      justify-content: stretch;
-      align-items: center;
-      flex-direction: column;
-      margin: auto;
-      border: 3px solid #8BC34A;
-      border-radius: 75px;
+      background: black;
       position: relative;
+      padding: 22px 4px;
+      width: 1200px;
+      border-radius: $quote-border-radius;
+      border: $quote-border-width solid var(--color-green);
       &::before {
         content: '';
         position: absolute;
-        left: -42px;
-        top: calc(50% - 10px);
-        border: 20px solid transparent;
-        border-right: 22px solid #8BC34A;
+        left: $quote-left-offset;
+        top: calc(50% - #{$quote-triangle-width});
+        border: $quote-triangle-width solid transparent;
+        border-right: $quote-right-offset solid var(--color-green);
+      }
+      @media screen and (max-width: $laptop-width) {
+        border: 0;
+        border-radius: 0;
+        max-width: 100%;
+        &::before { border: 0; }
       }
     }
-
     .article {
       text-align: center;
       color: white;
-      margin: 15px;
+      padding: 12px;
       font-size: 1.6em;
+      text-overflow: ellipsis;
+      overflow-x: hidden;
     }
   }
 }

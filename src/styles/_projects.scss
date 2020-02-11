@@ -1,6 +1,5 @@
-.skills {
+.projects {
   &__content {
-    @include flex($wrap: wrap);
     @include section-padding();
   }
 }
