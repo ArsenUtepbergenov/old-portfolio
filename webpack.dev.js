@@ -47,6 +47,11 @@ module.exports = {
       filename: './projects/vue-ts-simple-games/index.html',
       template: './projects/vue-ts-simple-games/index.html',
       chunks: ['games']
+    }),
+    new HtmlWebpackPlugin({
+      filename: './projects/sample-smacss/index.html',
+      template: './projects/sample-smacss/index.html',
+      chunks: ['smacss']
     })
   ],
   devServer: {

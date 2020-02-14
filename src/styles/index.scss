@@ -10,6 +10,7 @@
   --color-shadow: rgba(0, 0, 0, 0.5);
 }
 $navbar-width: 110px;
+$large-laptop-width: 1599px;
 $laptop-width: 1149px;
 // base rules
 body * {
@@ -79,6 +80,7 @@ body * {
 @import 'section';
 @import 'navbar';
 @import 'card';
+@import 'card-project';
 // import sections
 @import 'about';
 @import 'skills';

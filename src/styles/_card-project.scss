@@ -1,0 +1,27 @@
+.card-project {
+  @include size(600px, 360px);
+  @include flex($direction: column);
+  @include link(black);
+  font-size: 2em;
+  margin: 14px;
+  &__content {
+    @include fullSize();
+    @include flex($direction: column);
+    background: white;
+  }
+  &__img {
+    @include fullSize();
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__text {
+    min-height: 90px;
+    display: flex;
+    span { margin: auto; }
+  }
+  &:hover { box-shadow: 0 0 14px 4px black; }
+
+  &--vue-ts { background-image: url(../images/vue-ts.jpg); }
+  &--smacss { background-image: url(../images/smacss.jpg); }
+}

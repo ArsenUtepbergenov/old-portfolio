@@ -1,5 +1,6 @@
 .projects {
   &__content {
     @include section-padding();
+    @include flex($wrap: wrap);
   }
 }
