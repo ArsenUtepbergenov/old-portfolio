@@ -43,6 +43,12 @@ body * {
 @mixin fullSize() {
   @include size(100%);
 }
+@mixin imgFull($size: cover) {
+  @include fullSize();
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 @mixin grid($columns, $rows, $gap: 0, $justify: center, $align: center) {
   display: grid;
   grid-template-columns: $columns;

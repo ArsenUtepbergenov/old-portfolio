@@ -1,19 +1,17 @@
 .card-project {
   @include size(600px, 360px);
-  @include flex($direction: column);
-  @include link(black);
+  @include link();
+  @include transition(box-shadow);
   font-size: 2em;
   margin: 14px;
   &__content {
     @include fullSize();
     @include flex($direction: column);
-    background: white;
+    background: var(--color-dark-purple);
+    border-radius: 6px;
   }
   &__img {
-    @include fullSize();
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    @include imgFull();
   }
   &__text {
     min-height: 90px;
