@@ -54,6 +54,11 @@ module.exports = {
       filename: './projects/sample-smacss/index.html',
       template: './projects/sample-smacss/index.html',
       chunks: ['smacss']
+    }),
+    new HtmlWebpackPlugin({
+      filename: './projects/bem/index.html',
+      template: './projects/bem/index.html',
+      chunks: ['bem']
     })
   ],
   optimization: {
