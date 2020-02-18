@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -27,10 +29,11 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               outputPath: 'img',
-            }
+              limit: 8192,
+            },
           }
         ],
       }
@@ -52,5 +55,22 @@ module.exports = {
       template: './projects/sample-smacss/index.html',
       chunks: ['smacss']
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          ecma: 6,
+          compress: true,
+          output: {
+            comments: false,
+            beautify: false
+          }
+        }
+      }),
+      new OptimizeCSSPlugin({
+        cssProcessorOptions: { safe: true, map: { inline: false } }
+      })
+    ]
+  },
 }

@@ -5,10 +5,6 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: './app.js',
-  output: {
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
   module: {
     rules: [
       {
