@@ -18,4 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.remove('navbar__link--active')
     })
   }
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    const toUplink = document.getElementById('to-up-link')
+    if (scrollTop > 400) {
+      toUplink.style = 'visibility: visible;'
+    } else {
+      toUplink.style = 'visibility: hidden;'
+    }
+  })
 })

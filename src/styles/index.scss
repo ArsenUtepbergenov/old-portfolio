@@ -12,6 +12,8 @@
 $navbar-width: 110px;
 $large-laptop-width: 1599px;
 $laptop-width: 1149px;
+$tablet-width: 800px;
+$height-tablet-navbar: 140px;
 // base rules
 body * {
   box-sizing: border-box;
@@ -78,8 +80,30 @@ body * {
   }
 
   .main {
-    margin-left: $navbar-width;
+    margin-right: $navbar-width;
     min-height: 100vh;
+    @media screen and (max-width: $tablet-width) {
+      margin-right: 0;
+      margin-top: $height-tablet-navbar;
+    }
+  }
+
+  .to-up {
+    @include size(64px);
+    position: fixed;
+    border-radius: 100%;
+    bottom: 60px;
+    left: 40px;
+    background: var(--color-dark-green);
+    &__link {
+      @include link();
+      @include size(100%);
+      display: flex;
+      svg { margin: auto; }
+    }
+    @media screen and (max-width: $tablet-width) {
+      display: none;
+    }
   }
 }
 // import components
