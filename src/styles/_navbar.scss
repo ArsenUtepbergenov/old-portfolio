@@ -1,59 +1,51 @@
 .navbar {
-  @include flex($direction: column, $justify: flex-start, $align: stretch);
-  position: fixed;
-  right: 0;
+  position: sticky;
   top: 0;
-  min-height: 100vh;
-  height: 100%;
+  @include flex($justify: space-between, $align: stretch);
+  min-height: 86px;
   overflow: hidden;
-  background: black;
-  width: 110px;
+  background: var(--main-dark);
   z-index: 2;
+  margin-bottom: 30px;
+
+  .logo {
+    height: inherit;
+    font-size: 2rem;
+    color: white;
+    align-self: center;
+    padding: 0 60px;
+    font-family: 'Rubik Microbe', cursive;
+  }
+
   @media screen and (max-width: $tablet-width) {
-    @include flex($direction: column, $justify: space-evenly);
+    @include flex($justify: space-evenly);
     width: 100%;
     min-height: $height-tablet-navbar;
     max-height: $height-tablet-navbar;
     border-bottom: 5px solid white;
   }
-  &__links,
-  &__social-icons {
-    @include flex($direction: column, $justify: flex-start, $align: stretch);
+
+  &__links {
+    @include flex($justify: flex-start, $align: stretch);
     @media screen and (max-width: $tablet-width) {
       @include flex($justify: space-evenly, $wrap: wrap);
       width: 100%;
     }
   }
+
   &__link {
     @include link();
     @include transition(background);
     @include flex($direction: column, $justify: space-evenly);
-    font-size: 1.4em;
-    min-height: 96px;
+    height: inherit;
+    width: 110px;
     &:hover,
     &--active {
-      background: var(--color-green);
+      background: var(--color-dark-green);
     }
     @media screen and (max-width: $tablet-width) {
       flex-basis: 33.3%;
       min-height: 74px;
-    }
-  }
-  &__social-icons {
-    margin-top: 34px;
-    @media screen and (max-width: $tablet-width) {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
-  &__social-icon {
-    @include link();
-    @include transition(color);
-    color: var(--color-dark-green);
-    font-size: 1.8em;
-    margin: 8px;
-    &:hover {
-      color: white;
     }
   }
 }

@@ -2,13 +2,12 @@
   @include size(600px, 360px);
   @include link();
   @include transition(box-shadow);
-  font-size: 2em;
+  font-size: 1.6rem;
   margin: 14px;
   &__content {
     @include fullSize();
     @include flex($direction: column);
     background: var(--color-dark-purple);
-    border-radius: 6px;
   }
   &__img {
     @include imgFull();
@@ -24,7 +23,7 @@
     }
   }
   &:hover {
-    box-shadow: 0 0 14px 4px black;
+    box-shadow: 0 0 16px 10px #cfcfcf;
   }
 
   &--vue-ts {

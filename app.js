@@ -1,6 +1,8 @@
 import './src/styles/index.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
+  const toUplink = document.getElementById('to-up-link')
+  toUplink.style = 'visibility: hidden;'
   const navbarLinks = document.getElementById('navbar-links')
   let currentNode = null
 
@@ -14,18 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   function removeActiveStyle() {
-    Array.prototype.forEach.call(navbarLinks.children, item => {
-      item.classList.remove('navbar__link--active')
-    })
+    Array.from(navbarLinks.children).forEach(item => item.classList.remove('navbar__link--active'))
   }
 
   window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    const toUplink = document.getElementById('to-up-link')
-    if (scrollTop > 400) {
-      toUplink.style = 'visibility: visible;'
-    } else {
-      toUplink.style = 'visibility: hidden;'
-    }
+    scrollTop > 400
+      ? (toUplink.style = 'visibility: visible;')
+      : (toUplink.style = 'visibility: hidden;')
   })
+
+  const date = document.getElementById('date')
+  date.innerHTML = new Date().getFullYear()
 })

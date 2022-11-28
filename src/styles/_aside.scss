@@ -1,0 +1,24 @@
+.aside {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 60px;
+  &__social-icons {
+    height: inherit;
+    @include flex($direction: column, $justify: flex-end, $align: stretch);
+    @media screen and (max-width: $tablet-width) {
+      @include flex($justify: space-evenly, $wrap: wrap);
+    }
+  }
+  &__social-icon {
+    @include link();
+    @include transition(color);
+    color: var(--color-dark-green);
+    font-size: 1.8rem;
+    margin: 8px;
+    &:hover {
+      color: var(--main-dark);
+    }
+  }
+}

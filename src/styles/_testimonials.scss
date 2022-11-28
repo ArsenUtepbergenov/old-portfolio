@@ -1,7 +1,6 @@
-.skills {
+.testimonials {
   &__content {
     @include flex($wrap: wrap);
     @include section-padding();
-    gap: 12px;
   }
 }

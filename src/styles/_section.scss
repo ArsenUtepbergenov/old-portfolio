@@ -1,6 +1,5 @@
 .section {
-  color: white;
-  background: var(--color-shadow);
+  color: var(--text-color);
   &__title {
     text-align: center;
     font-size: 2em;

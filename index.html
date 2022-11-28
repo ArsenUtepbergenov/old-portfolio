@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -18,38 +14,49 @@
   </head>
   <body class="page">
     <nav class="navbar">
+      <span class="logo"><i class="fas fa-laptop-code"></i>&nbsp;AU</span>
       <div id="navbar-links" class="navbar__links">
         <a href="#" class="navbar__link navbar__link--active">
-          <i class="fas fa-user-circle fa-lg"></i>
+          <i class="fas fa-address-card fa-2x"></i>
           <span>About</span>
         </a>
         <a href="#skills" class="navbar__link">
-          <i class="fas fa-brain fa-lg"></i>
+          <i class="fas fa-brain fa-2x"></i>
           <span>Skills</span>
         </a>
+        <a href="#testimonials" class="navbar__link">
+          <i class="fas fa-comments fa-2x"></i>
+          <span>Testimonials</span>
+        </a>
         <a href="#projects" class="navbar__link">
-          <i class="fas fa-laptop-code fa-lg"></i>
+          <i class="fas fa-laptop-code fa-2x"></i>
           <span>Projects</span>
         </a>
-      </div>
-      <div class="navbar__social-icons">
-        <a class="navbar__social-icon" href="https://github.com/ArsenUtepbergenov" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-        <a class="navbar__social-icon" href="mailto:arsen.utepbergenov@yandex.ru" target="_blank">
-          <i class="far fa-envelope"></i>
-        </a>
-        <a class="navbar__social-icon" href="skype:arsenxx3?chat" target="_blank">
-          <i class="fab fa-skype"></i>
-        </a>
-        <a class="navbar__social-icon" href="https://vk.com/arseniibredihin" target="_blank">
-          <i class="fab fa-vk"></i>
+        <a href="#contact" class="navbar__link">
+          <i class="fas fa-envelope fa-2x"></i>
+          <span>Contact</span>
         </a>
       </div>
     </nav>
+    <aside class="aside">
+      <div class="aside__social-icons">
+        <a class="aside__social-icon" href="https://github.com/ArsenUtepbergenov" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="aside__social-icon" href="mailto:arsen.utepbergenov@yandex.ru" target="_blank">
+          <i class="far fa-envelope"></i>
+        </a>
+        <a class="aside__social-icon" href="skype:arsenxx3?chat" target="_blank">
+          <i class="fab fa-skype"></i>
+        </a>
+        <a class="aside__social-icon" href="https://vk.com/arseniibredihin" target="_blank">
+          <i class="fab fa-vk"></i>
+        </a>
+      </div>
+    </aside>
     <main class="main">
-      <section class="section about">
-        <div id="about" class="section__title">
+      <section id="about" class="section about">
+        <div class="section__title">
           About me
           <hr class="section__hr" />
         </div>
@@ -57,22 +64,22 @@
           <div class="avatar"></div>
           <div class="articles-wrapper">
             <article class="article">
-              Hi, I am glad to see you on my the portfolio website, my name is Arsen
+              Hi there! I am glad to see you on my website, my name is Arsen.
             </article>
             <article class="article">
               I specialize in frontend development and I will convert your brilliant design into
               quality and bulletproof HTML/CSS/Javascript!
             </article>
             <article class="article">
-              I am very passion Vue.js developer and I have been working with this framework for a
-              year. It is very interesting for me to learn new things regarding Vue and then
-              implement all those features in SPA applications.
+              I am very passionate about Vue and React development and have been working with this
+              framework for 3+ years. I am very interested in learning new things about the web and
+              then implementing all these features in SPA applications.
             </article>
           </div>
         </div>
       </section>
-      <section class="section skills">
-        <div id="skills" class="section__title">
+      <section id="skills" class="section skills">
+        <div class="section__title">
           My skills
           <hr class="section__hr" />
         </div>
@@ -159,8 +166,24 @@
           </a>
         </div>
       </section>
-      <section class="section projects">
-        <div id="projects" class="section__title">
+      <section id="testimonials" class="section testimonials">
+        <div class="section__title">
+          On Working With Me
+          <hr class="section__hr" />
+        </div>
+        <div class="testimonials__content">
+          <article class="article">
+            "Arsen is a guru at all things UX design, consistently producing intuitive, modern, and
+            bold designs. He is a natural problem solver in the design space so everyone went to him
+            if they were stuck on a feature or flow. He has a arsenal of design skills including
+            animation and graphic design. Not to mention, Seb was a design team lead, which means he
+            managed a full team of both onshore and offshore designs reviewing and providing
+            feedback on all of their designs... Any business would be lucky to have him."
+          </article>
+        </div>
+      </section>
+      <section id="projects" class="section projects">
+        <div class="section__title">
           My projects
           <hr class="section__hr" />
         </div>
@@ -191,11 +214,22 @@
           </a>
         </div>
       </section>
+      <section id="contact" class="section contact">
+        <div class="section__title">
+          Want to get in touch?
+          <hr class="section__hr" />
+        </div>
+        <div class="contact__content">TODO:</div>
+      </section>
       <div id="to-up-link" class="to-up">
         <a href="#" class="to-up__link">
           <i class="fas fa-angle-double-up fa-lg"></i>
         </a>
       </div>
     </main>
+    <footer class="footer">
+      Copyright&nbsp;
+      <i class="fas fa-copyright"></i>&nbsp; <span id="date"></span>&nbsp;Arsen Utepbergenov
+    </footer>
   </body>
 </html>
