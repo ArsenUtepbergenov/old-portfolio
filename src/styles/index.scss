@@ -39,6 +39,11 @@ textarea {
   resize: none;
 }
 
+input,
+textarea {
+  outline-color: var(--dark-green);
+}
+
 // mixins
 @import 'mixins';
 
