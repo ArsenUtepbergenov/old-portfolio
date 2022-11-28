@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const toUplink = document.getElementById('to-up-link')
   toUplink.style = 'visibility: hidden;'
   const navbarLinks = document.getElementById('navbar-links')
+  const menuButton = document.querySelector('.menu-button')
+
   let currentNode = null
 
   navbarLinks.addEventListener('click', event => {
@@ -24,6 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTop > 400
       ? (toUplink.style = 'visibility: visible;')
       : (toUplink.style = 'visibility: hidden;')
+  })
+
+  function myFunction() {
+    var x = document.getElementById('myTopnav')
+    if (x.className === 'topnav') {
+      x.className += ' responsive'
+    } else {
+      x.className = 'topnav'
+    }
+  }
+
+  menuButton.addEventListener('click', () => {
+    navbarLinks.className === 'navbar__links'
+      ? (navbarLinks.className += ' navbar__links--mobile')
+      : (navbarLinks.className = 'navbar__links')
   })
 
   const date = document.getElementById('date')

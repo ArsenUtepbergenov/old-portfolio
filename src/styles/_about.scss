@@ -1,7 +1,7 @@
 .about {
   &__content {
     @include flex($wrap: wrap);
-    @include section-padding();
+    @include section-padding;
     .avatar {
       @include background-image('../assets/avatar.jpg');
       @include size(250px);

@@ -1,13 +1,21 @@
 .section {
   color: var(--text-color);
+
   &__title {
     text-align: center;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: bold;
     letter-spacing: 2px;
     padding: 10px;
   }
+
   &__hr {
     width: 320px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    &__title {
+      font-size: 1.6rem;
+    }
   }
 }

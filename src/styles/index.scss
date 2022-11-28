@@ -8,7 +8,7 @@
   --color-blue: #3f51b5;
   --color-orange: #ff9800;
   --color-green: #8bc34a;
-  --color-dark-green: #4fc08c;
+  --dark-green: #4fc08c;
   --color-shadow: rgba(0, 0, 0, 0.5);
   --main-dark: #202020;
   --bg: #eeeff1;
@@ -18,7 +18,7 @@ $navbar-width: 110px;
 $large-laptop-width: 1599px;
 $laptop-width: 1149px;
 $tablet-width: 800px;
-$height-tablet-navbar: 140px;
+$mobile-width: 425px;
 
 // base rules
 * {
@@ -33,15 +33,12 @@ body {
 // mixins
 @import 'mixins';
 
-// the common page
+// common
 .page {
   position: relative;
 
   .main {
     min-height: 100vh;
-    @media screen and (max-width: $tablet-width) {
-      margin-top: $height-tablet-navbar;
-    }
   }
 
   .to-up {
@@ -50,7 +47,7 @@ body {
     border-radius: 100%;
     bottom: 60px;
     left: 40px;
-    background: var(--color-dark-green);
+    background: var(--dark-green);
     &__link {
       @include link();
       @include size(100%);
@@ -60,6 +57,15 @@ body {
       display: none;
     }
   }
+}
+
+.logo {
+  height: inherit;
+  font-size: 2rem;
+  color: white;
+  align-self: center;
+  padding: 0 60px;
+  font-family: 'Rubik Microbe', cursive;
 }
 
 // components

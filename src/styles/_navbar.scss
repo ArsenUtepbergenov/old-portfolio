@@ -8,28 +8,45 @@
   z-index: 2;
   margin-bottom: 30px;
 
-  .logo {
-    height: inherit;
-    font-size: 2rem;
+  .menu-button {
+    display: none;
+    background: transparent;
     color: white;
-    align-self: center;
-    padding: 0 60px;
-    font-family: 'Rubik Microbe', cursive;
+    border: 0;
+    cursor: pointer;
+    padding: 0 30px;
   }
 
   @media screen and (max-width: $tablet-width) {
-    @include flex($justify: space-evenly);
-    width: 100%;
-    min-height: $height-tablet-navbar;
-    max-height: $height-tablet-navbar;
-    border-bottom: 5px solid white;
+    .menu-button {
+      display: inline-block;
+    }
   }
 
   &__links {
     @include flex($justify: flex-start, $align: stretch);
     @media screen and (max-width: $tablet-width) {
-      @include flex($justify: space-evenly, $wrap: wrap);
-      width: 100%;
+      display: none;
+
+      &--mobile {
+        display: block;
+        position: fixed;
+        background: #202020;
+        width: 100%;
+        top: 86px;
+
+        .navbar__link {
+          width: 100%;
+          flex-direction: row;
+          height: 60px;
+          justify-content: flex-start;
+          padding-left: 60px;
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
     }
   }
 
@@ -41,11 +58,7 @@
     width: 110px;
     &:hover,
     &--active {
-      background: var(--color-dark-green);
-    }
-    @media screen and (max-width: $tablet-width) {
-      flex-basis: 33.3%;
-      min-height: 74px;
+      background: var(--dark-green);
     }
   }
 }
