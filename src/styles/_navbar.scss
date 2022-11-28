@@ -1,59 +1,63 @@
 .navbar {
-  @include flex($direction: column, $justify: flex-start, $align: stretch);
-  position: fixed;
-  right: 0;
+  position: sticky;
   top: 0;
-  min-height: 100vh;
-  height: 100%;
+  @include flex($justify: space-between, $align: stretch);
+  min-height: 86px;
   overflow: hidden;
-  background: black;
-  width: 110px;
+  background: var(--main-dark);
   z-index: 2;
-  @media screen and (max-width: $tablet-width) {
-    @include flex($direction: column, $justify: space-evenly);
-    width: 100%;
-    min-height: $height-tablet-navbar;
-    max-height: $height-tablet-navbar;
-    border-bottom: 5px solid white;
+  margin-bottom: 30px;
+
+  .menu-button {
+    display: none;
+    background: transparent;
+    color: white;
+    border: 0;
+    padding: 0 30px;
   }
-  &__links,
-  &__social-icons {
-    @include flex($direction: column, $justify: flex-start, $align: stretch);
-    @media screen and (max-width: $tablet-width) {
-      @include flex($justify: space-evenly, $wrap: wrap);
-      width: 100%;
+
+  @media screen and (max-width: $tablet-width) {
+    .menu-button {
+      display: inline-block;
     }
   }
+
+  &__links {
+    @include flex($justify: flex-start, $align: stretch);
+    @media screen and (max-width: $tablet-width) {
+      display: none;
+
+      &--mobile {
+        display: block;
+        position: fixed;
+        background: #202020;
+        width: 100%;
+        top: 86px;
+
+        .navbar__link {
+          width: 100%;
+          flex-direction: row;
+          height: 60px;
+          justify-content: flex-start;
+          padding-left: 60px;
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
   &__link {
     @include link();
     @include transition(background);
     @include flex($direction: column, $justify: space-evenly);
-    font-size: 1.4em;
-    min-height: 96px;
+    height: inherit;
+    width: 110px;
     &:hover,
     &--active {
-      background: var(--color-green);
-    }
-    @media screen and (max-width: $tablet-width) {
-      flex-basis: 33.3%;
-      min-height: 74px;
-    }
-  }
-  &__social-icons {
-    margin-top: 34px;
-    @media screen and (max-width: $tablet-width) {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
-  &__social-icon {
-    @include link();
-    @include transition(color);
-    color: var(--color-dark-green);
-    font-size: 1.8em;
-    margin: 8px;
-    &:hover {
-      color: white;
+      background: var(--dark-green);
     }
   }
 }

@@ -1,21 +1,32 @@
 .card {
-  @include size(200px);
+  @include size(140px);
   @include link();
   @include transition(box-shadow);
-  background: var(--color-dark-purple);
-  margin: 10px;
-  font-size: 1.8em;
-  border-radius: 3px;
+  color: var(--text-color);
+  background-color: white;
+  font-size: 1.2rem;
+
   &__content {
     @include fullSize();
     @include flex($direction: column);
-    padding: 14px;
+    padding: 12px;
   }
+
   &__img {
     @include imgFull(contain);
   }
+
   &:hover {
-    box-shadow: 0 0 14px 4px black;
+    box-shadow: 0 0 16px 10px #cfcfcf;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    @include size(80px);
+    font-size: 0.8rem;
+
+    &__content {
+      padding: 4px 8px;
+    }
   }
 
   &--vuejs {

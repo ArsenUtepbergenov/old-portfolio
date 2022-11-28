@@ -1,94 +1,58 @@
-// import the normalize
-@import 'normalize';
-// variables
+@import 'libs/normalize';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
+
+// vars
 :root {
   --color-dark-purple: #231d31;
   --color-blue: #3f51b5;
   --color-orange: #ff9800;
   --color-green: #8bc34a;
-  --color-dark-green: #4fc08c;
+  --dark-green: #4fc08c;
   --color-shadow: rgba(0, 0, 0, 0.5);
+  --main-dark: #202020;
+  --bg: #eeeff1;
+  --text-color: #525252;
 }
 $navbar-width: 110px;
 $large-laptop-width: 1599px;
 $laptop-width: 1149px;
 $tablet-width: 800px;
-$height-tablet-navbar: 140px;
+$mobile-width: 425px;
+
 // base rules
-body * {
+* {
   box-sizing: border-box;
 }
+
+body {
+  font-family: Poppins, sans-serif;
+  background-color: var(--bg);
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  outline-color: var(--dark-green);
+}
+
 // mixins
-@mixin background-image($url) {
-  background: url($url) no-repeat center;
-  background-size: cover;
-}
-@mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
-}
-@mixin flex($direction: row, $wrap: nowrap, $justify: center, $align: center) {
-  display: flex;
-  flex-direction: $direction;
-  flex-wrap: $wrap;
-  justify-content: $justify;
-  align-items: $align;
-}
-@mixin back-shadow() {
-  background-color: var(--color-shadow);
-}
-@mixin link($color: white) {
-  text-decoration: none;
-  text-align: center;
-  color: $color;
-}
-@mixin fullSize() {
-  @include size(100%);
-}
-@mixin imgFull($size: cover) {
-  @include fullSize();
-  background-size: $size;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-@mixin grid($columns, $rows, $gap: 0, $justify: center, $align: center) {
-  display: grid;
-  grid-template-columns: $columns;
-  grid-template-rows: $rows;
-  grid-gap: $gap;
-  justify-items: $justify;
-  align-items: $align;
-}
-@mixin transition($prop, $delay: 0.3s, $timing: ease) {
-  transition: $prop $delay $timing;
-}
-@mixin section-padding() {
-  padding: 34px 20px;
-}
-// the common page
+@import 'mixins';
+
+// common
 .page {
-  font-family: 'Montserrat', sans-serif;
   position: relative;
-  &::before {
-    @include background-image('../assets/bg.jpg');
-    background-attachment: fixed;
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-    z-index: -1;
-  }
 
   .main {
-    margin-right: $navbar-width;
     min-height: 100vh;
-    @media screen and (max-width: $tablet-width) {
-      margin-right: 0;
-      margin-top: $height-tablet-navbar;
-    }
   }
 
   .to-up {
@@ -97,26 +61,39 @@ body * {
     border-radius: 100%;
     bottom: 60px;
     left: 40px;
-    background: var(--color-dark-green);
+    background: var(--dark-green);
     &__link {
       @include link();
       @include size(100%);
-      display: flex;
-      i {
-        margin: auto;
-      }
+      @include flex;
     }
     @media screen and (max-width: $tablet-width) {
       display: none;
     }
   }
 }
-// import components
+
+.logo {
+  height: inherit;
+  font-size: 2rem;
+  color: white;
+  align-self: center;
+  padding: 0 60px;
+  font-family: 'Rubik Microbe', cursive;
+}
+
+// components
 @import 'section';
 @import 'navbar';
 @import 'card';
 @import 'card-project';
-// import sections
+@import 'article';
+@import 'footer';
+@import 'aside';
+@import 'form';
+// sections
 @import 'about';
 @import 'skills';
 @import 'projects';
+@import 'testimonials';
+@import 'contact';

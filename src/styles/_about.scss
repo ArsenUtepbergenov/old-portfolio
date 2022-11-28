@@ -1,53 +1,12 @@
-$quote-triangle-width: 26px;
-$quote-border-width: 6px;
-$quote-right-offset: 22px;
-$quote-left-offset: -($quote-triangle-width + $quote-border-width +
-      $quote-right-offset);
-$quote-border-radius: 100px;
-
 .about {
   &__content {
     @include flex($wrap: wrap);
-    @include section-padding();
+    @include section-padding;
     .avatar {
-      @include background-image("../assets/avatar.jpg");
+      @include background-image('../assets/avatar.jpg');
       @include size(250px);
       border-radius: 100%;
-      @media screen and (max-width: $large-laptop-width) {
-        margin: 14px auto;
-      }
-    }
-    .articles-wrapper {
-      background: black;
-      position: relative;
-      padding: 22px 4px;
-      width: 1200px;
-      border-radius: $quote-border-radius;
-      border: $quote-border-width solid var(--color-green);
-      &::before {
-        content: "";
-        position: absolute;
-        left: $quote-left-offset;
-        top: calc(50% - #{$quote-triangle-width});
-        border: $quote-triangle-width solid transparent;
-        border-right: $quote-right-offset solid var(--color-green);
-      }
-      @media screen and (max-width: $large-laptop-width) {
-        border: 0;
-        border-radius: 0;
-        max-width: 100%;
-        &::before {
-          border: 0;
-        }
-      }
-    }
-    .article {
-      text-align: center;
-      color: white;
-      padding: 12px;
-      font-size: 1.6em;
-      text-overflow: ellipsis;
-      overflow-x: hidden;
+      border: 6px solid white;
     }
   }
 }

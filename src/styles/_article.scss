@@ -1,0 +1,11 @@
+.article {
+  text-align: center;
+  padding: 12px;
+  font-size: 1.6rem;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+
+  @media screen and (max-width: $mobile-width) {
+    font-size: 1rem;
+  }
+}
