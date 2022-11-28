@@ -30,6 +30,15 @@ body {
   background-color: var(--bg);
 }
 
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
 // mixins
 @import 'mixins';
 
@@ -76,8 +85,10 @@ body {
 @import 'article';
 @import 'footer';
 @import 'aside';
+@import 'form';
 // sections
 @import 'about';
 @import 'skills';
 @import 'projects';
 @import 'testimonials';
+@import 'contact';

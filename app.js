@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   toUplink.style = 'visibility: hidden;'
   const navbarLinks = document.getElementById('navbar-links')
   const menuButton = document.querySelector('.menu-button')
-
+  const formMessage = document.getElementById('form-message')
   let currentNode = null
 
   navbarLinks.addEventListener('click', event => {
@@ -28,19 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
       : (toUplink.style = 'visibility: hidden;')
   })
 
-  function myFunction() {
-    var x = document.getElementById('myTopnav')
-    if (x.className === 'topnav') {
-      x.className += ' responsive'
-    } else {
-      x.className = 'topnav'
-    }
-  }
-
   menuButton.addEventListener('click', () => {
     navbarLinks.className === 'navbar__links'
       ? (navbarLinks.className += ' navbar__links--mobile')
       : (navbarLinks.className = 'navbar__links')
+  })
+
+  formMessage.addEventListener('submit', event => {
+    event.preventDefault()
   })
 
   const date = document.getElementById('date')
