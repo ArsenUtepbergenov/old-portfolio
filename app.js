@@ -3,10 +3,15 @@ import './src/styles/index.scss'
 document.addEventListener('DOMContentLoaded', () => {
   const toUplink = document.getElementById('to-up-link')
   toUplink.style = 'visibility: hidden;'
+  const nav = document.querySelector('.navbar')
   const navbarLinks = document.getElementById('navbar-links')
+  const links = document.querySelectorAll('.navbar__link')
   const menuButton = document.querySelector('.menu-button')
   const formMessage = document.getElementById('form-message')
+  const sections = document.querySelectorAll('section')
   let currentNode = null
+  let currentActive = null
+  const offsetNav = nav.offsetTop + nav.clientHeight
 
   navbarLinks.addEventListener('click', event => {
     const target = event.target
@@ -21,11 +26,35 @@ document.addEventListener('DOMContentLoaded', () => {
     Array.from(navbarLinks.children).forEach(item => item.classList.remove('navbar__link--active'))
   }
 
-  window.addEventListener('scroll', () => {
+  function findCurrentActive() {
+    for (const section of sections) {
+      if (window.pageYOffset + offsetNav < section.offsetTop + section.clientHeight) {
+        currentActive = section.getAttribute('id')
+        break
+      }
+    }
+  }
+
+  function showToUplink() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     scrollTop > 400
       ? (toUplink.style = 'visibility: visible;')
       : (toUplink.style = 'visibility: hidden;')
+  }
+
+  window.addEventListener('scroll', () => {
+    showToUplink()
+    findCurrentActive()
+    removeActiveStyle()
+
+    links.forEach(l => {
+      if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2) {
+        links[links.length - 1].classList.add('navbar__link--active')
+        return
+      } else if (l.dataset.to === currentActive) {
+        l.classList.add('navbar__link--active')
+      }
+    })
   })
 
   menuButton.addEventListener('click', () => {

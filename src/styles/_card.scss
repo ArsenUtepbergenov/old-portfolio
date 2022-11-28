@@ -9,11 +9,12 @@
   &__content {
     @include fullSize();
     @include flex($direction: column);
-    padding: 12px;
+    padding: 8px 12px 8px 12px;
   }
 
   &__img {
     @include imgFull(contain);
+    margin-bottom: 8px;
   }
 
   &:hover {
@@ -64,5 +65,8 @@
   }
   &--oop {
     background-image: url(../assets/oop.png);
+  }
+  &--reactjs {
+    background-image: url(../assets/react.png);
   }
 }
