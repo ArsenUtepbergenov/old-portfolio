@@ -1,7 +1,8 @@
 $quote-triangle-width: 26px;
 $quote-border-width: 6px;
 $quote-right-offset: 22px;
-$quote-left-offset: -($quote-triangle-width + $quote-border-width + $quote-right-offset);
+$quote-left-offset: -($quote-triangle-width + $quote-border-width +
+      $quote-right-offset);
 $quote-border-radius: 100px;
 
 .about {
@@ -9,7 +10,7 @@ $quote-border-radius: 100px;
     @include flex($wrap: wrap);
     @include section-padding();
     .avatar {
-      @include background-image('../images/avatar.jpg');
+      @include background-image("../assets/avatar.jpg");
       @include size(250px);
       border-radius: 100%;
       @media screen and (max-width: $large-laptop-width) {
@@ -24,7 +25,7 @@ $quote-border-radius: 100px;
       border-radius: $quote-border-radius;
       border: $quote-border-width solid var(--color-green);
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: $quote-left-offset;
         top: calc(50% - #{$quote-triangle-width});
@@ -35,7 +36,9 @@ $quote-border-radius: 100px;
         border: 0;
         border-radius: 0;
         max-width: 100%;
-        &::before { border: 0; }
+        &::before {
+          border: 0;
+        }
       }
     }
     .article {

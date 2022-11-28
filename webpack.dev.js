@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -12,54 +12,39 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
+          'resolve-url-loader',
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'img',
-            }
-          }
+              sourceMap: true,
+            },
+          },
         ],
-      }
-    ]
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: './index.html',
-      template: './index.html',
-      inject: 'body'
+      filename: 'index.html',
+      template: 'index.html',
+      inject: 'body',
     }),
-    new HtmlWebpackPlugin({
-      filename: './projects/vue-ts-simple-games/index.html',
-      template: './projects/vue-ts-simple-games/index.html',
-      chunks: ['games']
-    }),
-    new HtmlWebpackPlugin({
-      filename: './projects/sample-smacss/index.html',
-      template: './projects/sample-smacss/index.html',
-      chunks: ['smacss']
-    })
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'index.html'),
-    watchContentBase: true,
-    filename: 'bundle.js',
+    server: 'http',
     port: 8080,
-    open: true,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     hot: true,
     compress: true,
-    overlay: true,
-    progress: true,
-    inline: true
-  }
+    open: true,
+    client: {
+      overlay: {
+        errors: true,
+      },
+      progress: true,
+      reconnect: 3,
+    },
+  },
 }

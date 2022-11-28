@@ -5,7 +5,7 @@
   --color-dark-purple: #231d31;
   --color-blue: #3f51b5;
   --color-orange: #ff9800;
-  --color-green: #8BC34A;
+  --color-green: #8bc34a;
   --color-dark-green: #4fc08c;
   --color-shadow: rgba(0, 0, 0, 0.5);
 }
@@ -70,11 +70,14 @@ body * {
   font-family: 'Montserrat', sans-serif;
   position: relative;
   &::before {
-    @include background-image('../images/bg.jpg');
+    @include background-image('../assets/bg.jpg');
     background-attachment: fixed;
-    content: "";
+    content: '';
     position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     pointer-events: none;
     z-index: -1;
   }
@@ -99,7 +102,9 @@ body * {
       @include link();
       @include size(100%);
       display: flex;
-      svg { margin: auto; }
+      i {
+        margin: auto;
+      }
     }
     @media screen and (max-width: $tablet-width) {
       display: none;

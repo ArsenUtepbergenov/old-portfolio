@@ -14,18 +14,44 @@
   &__img {
     @include imgFull(contain);
   }
-  &:hover { box-shadow: 0 0 14px 4px black; }
+  &:hover {
+    box-shadow: 0 0 14px 4px black;
+  }
 
-  &--vuejs { background-image: url(../images/vuejs.png); }
-  &--vuexjs { background-image: url(../images/vuex.png); }
-  &--js { background-image: url(../images/js.png); }
-  &--typescript { background-image: url(../images/typescript.png); }
-  &--webpack { background-image: url(../images/webpack.png); }
-  &--sass { background-image: url(../images/sass.png); }
-  &--html { background-image: url(../images/html.png); }
-  &--git { background-image: url(../images/git.png); }
-  &--design-patterns { background-image: url(../images/design-patterns.png); }
-  &--jira { background-image: url(../images/jira.png); }
-  &--photoshop { background-image: url(../images/photoshop.png); }
-  &--oop { background-image: url(../images/oop.png); }
+  &--vuejs {
+    background-image: url(../assets/vuejs.png);
+  }
+  &--vuexjs {
+    background-image: url(../assets/vuex.png);
+  }
+  &--js {
+    background-image: url(../assets/js.png);
+  }
+  &--typescript {
+    background-image: url(../assets/typescript.png);
+  }
+  &--webpack {
+    background-image: url(../assets/webpack.png);
+  }
+  &--sass {
+    background-image: url(../assets/sass.png);
+  }
+  &--html {
+    background-image: url(../assets/html.png);
+  }
+  &--git {
+    background-image: url(../assets/git.png);
+  }
+  &--design-patterns {
+    background-image: url(../assets/design-patterns.png);
+  }
+  &--jira {
+    background-image: url(../assets/jira.png);
+  }
+  &--photoshop {
+    background-image: url(../assets/photoshop.png);
+  }
+  &--oop {
+    background-image: url(../assets/oop.png);
+  }
 }
