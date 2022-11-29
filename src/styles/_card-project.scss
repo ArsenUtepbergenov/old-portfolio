@@ -1,8 +1,8 @@
 .card-project {
-  @include size(600px, 360px);
+  @include size(400px, 260px);
   @include link();
   @include transition(box-shadow);
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   margin: 14px;
   &__content {
     @include fullSize();
@@ -26,8 +26,11 @@
     box-shadow: 0 0 16px 10px #cfcfcf;
   }
 
+  &--ts {
+    background-image: url(../assets/ts.png);
+  }
   &--vue-ts {
-    background-image: url(../assets//vue-ts.jpg);
+    background-image: url(../assets/vue-ts.jpg);
   }
   &--smacss {
     background-image: url(../assets/smacss.jpg);
