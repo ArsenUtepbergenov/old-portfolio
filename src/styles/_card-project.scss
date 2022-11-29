@@ -7,7 +7,7 @@
   &__content {
     @include fullSize();
     @include flex($direction: column);
-    background: var(--color-dark-purple);
+    background: var(--dark-purple);
   }
   &__img {
     @include imgFull();

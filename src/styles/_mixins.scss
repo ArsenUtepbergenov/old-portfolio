@@ -18,7 +18,7 @@
 }
 
 @mixin back-shadow() {
-  background-color: var(--color-shadow);
+  background-color: var(--shadow);
 }
 
 @mixin link($color: white) {

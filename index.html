@@ -189,17 +189,25 @@
           <form id="form-message" class="form">
             <div class="form__field">
               <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Enter your name..." required />
+              <input
+                id="name"
+                name="user_name"
+                placeholder="Enter your name..."
+                pattern="\w{3,16}"
+                required
+              />
+              <small>&nbsp;</small>
             </div>
             <div class="form__field">
               <label for="email">Email Address</label>
               <input
                 id="email"
-                name="email"
+                name="user_email"
                 type="email"
                 placeholder="Enter your email..."
                 required
               />
+              <small id="email-error-text" class="error">&nbsp;</small>
             </div>
             <div class="form__field form__field--full-width">
               <label for="message">Message</label>
@@ -213,6 +221,7 @@
               ></textarea>
             </div>
             <button type="submit" class="form__send-button">Send</button>
+            <small id="form-error-text" class="form__field--full-width error">&nbsp;</small>
           </form>
         </div>
       </section>
@@ -224,6 +233,10 @@
       Copyright&nbsp; <i class="fas fa-copyright"></i>&nbsp; <span id="date"></span>&nbsp;Arsen
       Utepbergenov
     </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <!-- <script defer="defer" src="./bundle.js"></script> -->
   </body>
 </html>
