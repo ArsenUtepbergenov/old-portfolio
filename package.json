@@ -1,11 +1,11 @@
 {
   "name": "arsenutepbergenov.github.io",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The my portfolio site",
   "main": "app.js",
   "scripts": {
-    "build": "webpack --config ./webpack.prod.js",
-    "dev": "webpack-dev-server --config ./webpack.dev.js"
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server --config webpack.dev.js"
   },
   "repository": {
     "type": "git",

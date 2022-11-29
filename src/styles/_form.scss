@@ -1,11 +1,17 @@
 .form {
   width: 86%;
-  padding: 40px;
+  padding: 40px 40px 10px 40px;
   background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 140px 40px;
   gap: 14px 20px;
+
+  small {
+    &.error {
+      color: var(--error);
+    }
+  }
 
   &__field {
     display: flex;
@@ -17,6 +23,16 @@
       border: 2px solid #eeeff1;
       padding: 10px;
       margin: 8px 0 0 0;
+
+      &.error {
+        border-color: var(--error);
+      }
+    }
+
+    small {
+      &.error {
+        color: var(--error);
+      }
     }
 
     &--full-width {
